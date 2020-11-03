@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body,html{
+            height:100%;
+        }
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+{% endblock %}
+{% block title %}
+    用户登录
+{% endblock %}
+{% block content %}
+    <body background="../static/login.jpg">
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="card col-md-4">
+                <div class="card-header"><h4 class="text-muted"><strong>用户登录</strong></h4></div>
+                <div class="card-body">
+                    <form action="/auth/login/" method="get">
+                        <label for="username">用户名:</label>
+                        <input class="form-control" name="username" placeholder="请输入用户名">
+                        <label for="password">密码:</label>
+                        <input class="form-control" type="password" name="password" placeholder="请输入密码">
+                        <div class="text-right">
+                            <button class="btn btn-dark mt-1" type="submit">登录</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}
